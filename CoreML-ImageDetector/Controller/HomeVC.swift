@@ -19,6 +19,9 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(self.camereTapped(_:)))
+        mainImageView.addGestureRecognizer(gesture)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -46,6 +49,7 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             }
             
             if let firstResult = results.first {
+                self.navigationItem.title = firstResult.identifier.capitalized
                 self.presentAlert(firstResult.identifier, firstResult.confidence)
             }
         }
@@ -73,7 +77,7 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
         }
     }
     
-    @IBAction func camereTapped(_ sender: UIBarButtonItem) {
+    @IBAction @objc func camereTapped(_ sender: UIBarButtonItem) {
         present(imagePicker, animated: true, completion: nil)
     }
 }
