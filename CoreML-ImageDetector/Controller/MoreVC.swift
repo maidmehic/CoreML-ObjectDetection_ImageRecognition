@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MoreVC: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var labelView: UILabel!
     var searchTerm: String?
@@ -16,8 +17,16 @@ class MoreVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager.shared.getWikiPost(term: searchTerm!) { (extract, error) in
-            self.labelView.text = extract
+        let searchQuery = searchTerm!.components(separatedBy: ",")[0]
+        
+        NetworkManager.shared.getWikiPost(term: searchQuery) { (extract, imageUrl, error) in
+            if error == nil {
+                self.labelView.text = extract
+                
+                if let url = imageUrl {
+                    self.imageView.sd_setImage(with: url, completed: nil)
+                }
+            }
         }
     }
 }

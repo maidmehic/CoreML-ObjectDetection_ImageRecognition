@@ -5,5 +5,6 @@ target 'CoreML-ImageDetector' do
 
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'SDWebImage'
 
 end

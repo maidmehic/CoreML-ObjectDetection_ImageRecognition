@@ -15,30 +15,30 @@ class NetworkManager {
 
     private let wikipediaBaseURL = "https://en.wikipedia.org/w/api.php"
     
-    func getWikiPost(term: String, onCompletion: ((String?, Error?) -> Void)? = nil) {
+    func getWikiPost(term: String, onCompletion: ((String?, URL?, Error?) -> Void)? = nil) {
         let parameters: [String:String] =
             [
                 "format":"json",
                 "action":"query",
-                "prop":"extracts",
+                "prop":"extracts|pageimages",
                 "exintro":"",
                 "explaintext":"",
                 "redirects":"1",
                 "indexpageids":"",
-                "titles":term
+                "titles":term,
+                "pithumbsize":"500"
             ]
         
         Alamofire.request(wikipediaBaseURL, method: .get, parameters: parameters).responseJSON { response in
             if response.result.isSuccess {
                 let json: JSON = JSON(response.result.value!)
                 let pageId = json["query"]["pageids"][0].stringValue
-                
-                //                let wikiTitle = json["query"]["pages"][pageId]["title"]
                 let wikiExtract = json["query"]["pages"][pageId]["extract"].stringValue
-                
-                if onCompletion != nil {onCompletion!(wikiExtract, nil)}
+                let thumbnail = json["query"]["pages"][pageId]["thumbnail"]["source"].url
+                                
+                if onCompletion != nil {onCompletion!(wikiExtract, thumbnail, nil)}
             } else {
-                if onCompletion != nil {onCompletion!(nil, response.error)}
+                if onCompletion != nil {onCompletion!(nil, nil, response.error)}
             }
         }
     }
