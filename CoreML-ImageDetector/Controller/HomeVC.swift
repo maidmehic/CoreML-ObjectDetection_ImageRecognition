@@ -50,7 +50,7 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             
             if let firstResult = results.first {
                 self.navigationItem.title = firstResult.identifier.capitalized
-                self.presentAlert(firstResult.identifier, firstResult.confidence)
+                self.presentAlert(firstResult.identifier.capitalized, firstResult.confidence)
             }
         }
         
@@ -65,9 +65,10 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     func presentAlert(_ title: String, _ confidence: Float) {
         let confidence = String((confidence * 100.0).rounded())
-        let alert = UIAlertController(title: title, message: "\(confidence)%", preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: "Confidence: \(confidence)%", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Find out More!", style: .default, handler: { (action) in
+            
             self.performSegue(withIdentifier: "showMore", sender: self)
         }))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -79,5 +80,12 @@ class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     @IBAction @objc func camereTapped(_ sender: UIBarButtonItem) {
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMore" {
+            let controller = segue.destination as! MoreVC
+            controller.searchTerm = navigationItem.title
+        }
     }
 }

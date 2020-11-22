@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E4EF2AD7AAEA6D3BC8E37F2 /* Pods_CoreML_ImageDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C5CD9573A41477CC460950 /* Pods_CoreML_ImageDetector.framework */; };
+		E671ADD0256A861C00088513 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E671ADCF256A861C00088513 /* NetworkManager.swift */; };
 		E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B79256978AF008C5A91 /* AppDelegate.swift */; };
 		E6D97B7C256978AF008C5A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */; };
 		E6D97B81256978AF008C5A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D97B7F256978AF008C5A91 /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		025B8953194CABF0F7E4F1CA /* Pods-CoreML-ImageDetector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreML-ImageDetector.debug.xcconfig"; path = "Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector.debug.xcconfig"; sourceTree = "<group>"; };
+		98C5CD9573A41477CC460950 /* Pods_CoreML_ImageDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreML_ImageDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8F49B0043D3597B0ECFBEE0 /* Pods-CoreML-ImageDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreML-ImageDetector.release.xcconfig"; path = "Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector.release.xcconfig"; sourceTree = "<group>"; };
+		E671ADCF256A861C00088513 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E6D97B76256978AF008C5A91 /* CoreML-ImageDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML-ImageDetector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D97B79256978AF008C5A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +41,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4EF2AD7AAEA6D3BC8E37F2 /* Pods_CoreML_ImageDetector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DBB25E8FCB1E6D2F12C5041 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98C5CD9573A41477CC460950 /* Pods_CoreML_ImageDetector.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1F7D9479AB9243DDAB951E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				025B8953194CABF0F7E4F1CA /* Pods-CoreML-ImageDetector.debug.xcconfig */,
+				B8F49B0043D3597B0ECFBEE0 /* Pods-CoreML-ImageDetector.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E671ADCE256A860C00088513 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E671ADCF256A861C00088513 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		E6D97B6D256978AF008C5A91 = {
 			isa = PBXGroup;
 			children = (
 				E6D97B78256978AF008C5A91 /* CoreML-ImageDetector */,
 				E6D97B77256978AF008C5A91 /* Products */,
+				E1F7D9479AB9243DDAB951E0 /* Pods */,
+				5DBB25E8FCB1E6D2F12C5041 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +94,7 @@
 		E6D97B78256978AF008C5A91 /* CoreML-ImageDetector */ = {
 			isa = PBXGroup;
 			children = (
+				E671ADCE256A860C00088513 /* Manager */,
 				E6D97B90256978C1008C5A91 /* Controller */,
 				E6D97B8F256978BD008C5A91 /* View */,
 				E6D97B8E256978B5008C5A91 /* Model */,
@@ -104,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6D97B8A256978AF008C5A91 /* Build configuration list for PBXNativeTarget "CoreML-ImageDetector" */;
 			buildPhases = (
+				110E12E70E074D0216F8E400 /* [CP] Check Pods Manifest.lock */,
 				E6D97B72256978AF008C5A91 /* Sources */,
 				E6D97B73256978AF008C5A91 /* Frameworks */,
 				E6D97B74256978AF008C5A91 /* Resources */,
+				A152708C746E203A1A76551C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,11 +199,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		110E12E70E074D0216F8E400 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoreML-ImageDetector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A152708C746E203A1A76551C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E6D97B72256978AF008C5A91 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E671ADD0256A861C00088513 /* NetworkManager.swift in Sources */,
 				E6D97B92256978D3008C5A91 /* Inceptionv3.mlmodel in Sources */,
 				E6D97B98256979E5008C5A91 /* HomeVC.swift in Sources */,
 				E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */,
@@ -315,6 +395,7 @@
 		};
 		E6D97B8B256978AF008C5A91 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 025B8953194CABF0F7E4F1CA /* Pods-CoreML-ImageDetector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -335,6 +416,7 @@
 		};
 		E6D97B8C256978AF008C5A91 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F49B0043D3597B0ECFBEE0 /* Pods-CoreML-ImageDetector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

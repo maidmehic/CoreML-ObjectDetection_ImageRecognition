@@ -53,14 +53,41 @@
                     <view key="view" contentMode="scaleToFill" id="PAu-tr-7vi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m39-VV-Esl">
+                                <rect key="frame" x="0.0" y="140" width="414" height="327"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="m39-VV-Esl" secondAttribute="height" multiplier="138:109" id="9zc-me-JxR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Np7-N6-ibp">
+                                <rect key="frame" x="0.0" y="467" width="414" height="395"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3se-Js-QFY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m39-VV-Esl" firstAttribute="top" secondItem="3se-Js-QFY" secondAttribute="top" id="9I1-5B-X3O"/>
+                            <constraint firstItem="m39-VV-Esl" firstAttribute="trailing" secondItem="3se-Js-QFY" secondAttribute="trailing" id="Cwq-xG-Yi2"/>
+                            <constraint firstItem="Np7-N6-ibp" firstAttribute="trailing" secondItem="3se-Js-QFY" secondAttribute="trailing" id="FoH-Xl-D8Z"/>
+                            <constraint firstItem="Np7-N6-ibp" firstAttribute="leading" secondItem="3se-Js-QFY" secondAttribute="leading" id="Tal-mr-JOV"/>
+                            <constraint firstItem="m39-VV-Esl" firstAttribute="leading" secondItem="3se-Js-QFY" secondAttribute="leading" id="Ubz-BH-zql"/>
+                            <constraint firstItem="Np7-N6-ibp" firstAttribute="top" secondItem="m39-VV-Esl" secondAttribute="bottom" id="XTp-9U-hm4"/>
+                            <constraint firstItem="Np7-N6-ibp" firstAttribute="bottom" secondItem="3se-Js-QFY" secondAttribute="bottom" id="fcc-HH-JRU"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6r1-tC-zn3"/>
+                    <connections>
+                        <outlet property="imageView" destination="m39-VV-Esl" id="orb-mY-d9d"/>
+                        <outlet property="labelView" destination="Np7-N6-ibp" id="dXg-ad-OSK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BR0-zT-cVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2141" y="129"/>
+            <point key="canvasLocation" x="2139.130434782609" y="128.57142857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jaD-iM-AgZ">
