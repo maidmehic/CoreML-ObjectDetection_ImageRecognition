@@ -9,10 +9,73 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Image Detector-->
+        <!--StartVC-->
+        <scene sceneID="Bdj-aT-kMh">
+            <objects>
+                <viewController id="gCf-IJ-fcG" customClass="StartVC" customModule="CoreML_ImageDetector" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTc-tk-mWP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="nc1-mr-VLl">
+                                <rect key="frame" x="63" y="255" width="288" height="386"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="foJ-k5-OP5">
+                                        <rect key="frame" x="0.0" y="0.5" width="288" height="157"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="158" id="rde-mL-a1c"/>
+                                            <constraint firstAttribute="width" constant="288" id="wbZ-Nq-g0U"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="8YB-cG-t5A">
+                                        <rect key="frame" x="0.0" y="228.5" width="288" height="157"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="288" id="Zpi-TN-ojF"/>
+                                            <constraint firstAttribute="height" constant="158" id="qIS-VH-sGV"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bCa-AB-Ser"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nc1-mr-VLl" firstAttribute="centerY" secondItem="KTc-tk-mWP" secondAttribute="centerY" id="Jsx-ZD-hbj"/>
+                            <constraint firstItem="nc1-mr-VLl" firstAttribute="centerX" secondItem="KTc-tk-mWP" secondAttribute="centerX" id="lzS-oN-dmN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bFv-AP-PJ1"/>
+                    <connections>
+                        <outlet property="cameraImageView" destination="8YB-cG-t5A" id="bPg-6X-D2F"/>
+                        <outlet property="videoImageView" destination="foJ-k5-OP5" id="N7f-GT-OWa"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="StartToIR" id="Lmi-JC-z55"/>
+                        <segue destination="cMr-IC-rpf" kind="show" identifier="StartToOD" id="asd-ZN-mgk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAl-XK-yFA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52.173913043478265" y="128.57142857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OWj-38-RdC">
+            <objects>
+                <viewController id="cMr-IC-rpf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qqu-vo-lfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WOj-7F-gIg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CIu-BA-bc6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TUU-SU-Mr8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000" y="495"/>
+        </scene>
+        <!--Image Recognition-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="CoreML_ImageDetector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ImageRecognitionVC" customModule="CoreML_ImageDetector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +93,7 @@
                             <constraint firstAttribute="bottom" secondItem="erf-g0-xuK" secondAttribute="bottom" id="t8L-So-iEg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Image Detector" id="oss-cU-NeA">
+                    <navigationItem key="navigationItem" title="Image Recognition" id="oss-cU-NeA">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Kad-H6-Guh">
                             <connections>
                                 <action selector="camereTapped:" destination="BYZ-38-t0r" id="4Ax-ry-e1B"/>
@@ -44,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="128.57142857142856"/>
+            <point key="canvasLocation" x="996" y="-165"/>
         </scene>
         <!--MoreVC-->
         <scene sceneID="MhW-Ul-9V7">
@@ -87,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BR0-zT-cVD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139.130434782609" y="128.57142857142856"/>
+            <point key="canvasLocation" x="2313" y="-165"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jaD-iM-AgZ">
@@ -100,16 +163,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Es8-cz-ar0"/>
+                        <segue destination="gCf-IJ-fcG" kind="relationship" relationship="rootViewController" id="krV-Uo-nEv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sg4-bi-sol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
+            <point key="canvasLocation" x="-1080" y="129"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="video.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

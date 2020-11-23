@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		4E4EF2AD7AAEA6D3BC8E37F2 /* Pods_CoreML_ImageDetector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C5CD9573A41477CC460950 /* Pods_CoreML_ImageDetector.framework */; };
 		E671ADD0256A861C00088513 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E671ADCF256A861C00088513 /* NetworkManager.swift */; };
+		E69AC49A256C0EBD00401B95 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC499256C0EBD00401B95 /* StartVC.swift */; };
+		E69AC49D256C0F6700401B95 /* ObjectDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC49C256C0F6700401B95 /* ObjectDetectionVC.swift */; };
 		E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B79256978AF008C5A91 /* AppDelegate.swift */; };
 		E6D97B7C256978AF008C5A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */; };
 		E6D97B81256978AF008C5A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D97B7F256978AF008C5A91 /* Main.storyboard */; };
 		E6D97B83256978AF008C5A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6D97B82256978AF008C5A91 /* Assets.xcassets */; };
 		E6D97B86256978AF008C5A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D97B84256978AF008C5A91 /* LaunchScreen.storyboard */; };
 		E6D97B92256978D3008C5A91 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B91256978D3008C5A91 /* Inceptionv3.mlmodel */; };
-		E6D97B98256979E5008C5A91 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B97256979E5008C5A91 /* HomeVC.swift */; };
+		E6D97B98256979E5008C5A91 /* ImageRecognitionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B97256979E5008C5A91 /* ImageRecognitionVC.swift */; };
 		E6D97B9C25697BEB008C5A91 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B9B25697BEB008C5A91 /* MoreVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		98C5CD9573A41477CC460950 /* Pods_CoreML_ImageDetector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreML_ImageDetector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F49B0043D3597B0ECFBEE0 /* Pods-CoreML-ImageDetector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreML-ImageDetector.release.xcconfig"; path = "Target Support Files/Pods-CoreML-ImageDetector/Pods-CoreML-ImageDetector.release.xcconfig"; sourceTree = "<group>"; };
 		E671ADCF256A861C00088513 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E69AC499256C0EBD00401B95 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
+		E69AC49C256C0F6700401B95 /* ObjectDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionVC.swift; sourceTree = "<group>"; };
 		E6D97B76256978AF008C5A91 /* CoreML-ImageDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML-ImageDetector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D97B79256978AF008C5A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +36,7 @@
 		E6D97B85256978AF008C5A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6D97B87256978AF008C5A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6D97B91256978D3008C5A91 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
-		E6D97B97256979E5008C5A91 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		E6D97B97256979E5008C5A91 /* ImageRecognitionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognitionVC.swift; sourceTree = "<group>"; };
 		E6D97B9B25697BEB008C5A91 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +130,9 @@
 		E6D97B90256978C1008C5A91 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E6D97B97256979E5008C5A91 /* HomeVC.swift */,
+				E69AC499256C0EBD00401B95 /* StartVC.swift */,
+				E69AC49C256C0F6700401B95 /* ObjectDetectionVC.swift */,
+				E6D97B97256979E5008C5A91 /* ImageRecognitionVC.swift */,
 				E6D97B9B25697BEB008C5A91 /* MoreVC.swift */,
 			);
 			path = Controller;
@@ -248,10 +254,12 @@
 			files = (
 				E671ADD0256A861C00088513 /* NetworkManager.swift in Sources */,
 				E6D97B92256978D3008C5A91 /* Inceptionv3.mlmodel in Sources */,
-				E6D97B98256979E5008C5A91 /* HomeVC.swift in Sources */,
+				E6D97B98256979E5008C5A91 /* ImageRecognitionVC.swift in Sources */,
 				E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */,
+				E69AC49D256C0F6700401B95 /* ObjectDetectionVC.swift in Sources */,
 				E6D97B7C256978AF008C5A91 /* SceneDelegate.swift in Sources */,
 				E6D97B9C25697BEB008C5A91 /* MoreVC.swift in Sources */,
+				E69AC49A256C0EBD00401B95 /* StartVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

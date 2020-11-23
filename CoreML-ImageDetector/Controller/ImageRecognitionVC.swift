@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  ImageRecognitionVC.swift
 //  CoreML-ImageDetector
 //
 //  Created by Maid Mehic on 21/11/2020.
@@ -9,7 +9,7 @@ import UIKit
 import CoreML
 import Vision
 
-class HomeVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageRecognitionVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var mainImageView: UIImageView!
     let imagePicker = UIImagePickerController()
