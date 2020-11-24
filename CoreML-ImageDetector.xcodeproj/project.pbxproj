@@ -11,6 +11,10 @@
 		E671ADD0256A861C00088513 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E671ADCF256A861C00088513 /* NetworkManager.swift */; };
 		E69AC49A256C0EBD00401B95 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC499256C0EBD00401B95 /* StartVC.swift */; };
 		E69AC49D256C0F6700401B95 /* ObjectDetectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC49C256C0F6700401B95 /* ObjectDetectionVC.swift */; };
+		E69AC4A4256C15AE00401B95 /* BoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC4A3256C15AE00401B95 /* BoundingBoxView.swift */; };
+		E69AC4A9256C15E400401B95 /* VNRecognizedObjectObservationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC4A8256C15E400401B95 /* VNRecognizedObjectObservationExtension.swift */; };
+		E69AC4AE256C162200401B95 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69AC4AD256C162200401B95 /* VideoCapture.swift */; };
+		E69AC4B1256C17DF00401B95 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = E69AC4B0256C17DF00401B95 /* YOLOv3Tiny.mlmodel */; };
 		E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B79256978AF008C5A91 /* AppDelegate.swift */; };
 		E6D97B7C256978AF008C5A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */; };
 		E6D97B81256978AF008C5A91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6D97B7F256978AF008C5A91 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 		E671ADCF256A861C00088513 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E69AC499256C0EBD00401B95 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		E69AC49C256C0F6700401B95 /* ObjectDetectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionVC.swift; sourceTree = "<group>"; };
+		E69AC4A3256C15AE00401B95 /* BoundingBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBoxView.swift; sourceTree = "<group>"; };
+		E69AC4A8256C15E400401B95 /* VNRecognizedObjectObservationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNRecognizedObjectObservationExtension.swift; sourceTree = "<group>"; };
+		E69AC4AD256C162200401B95 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		E69AC4B0256C17DF00401B95 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
 		E6D97B76256978AF008C5A91 /* CoreML-ImageDetector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CoreML-ImageDetector.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D97B79256978AF008C5A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6D97B7B256978AF008C5A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +85,30 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		E69AC4A2256C159400401B95 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				E69AC4A3256C15AE00401B95 /* BoundingBoxView.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		E69AC4A7256C15CC00401B95 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E69AC4A8256C15E400401B95 /* VNRecognizedObjectObservationExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E69AC4AC256C160300401B95 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E69AC4AD256C162200401B95 /* VideoCapture.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		E6D97B6D256978AF008C5A91 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +130,8 @@
 		E6D97B78256978AF008C5A91 /* CoreML-ImageDetector */ = {
 			isa = PBXGroup;
 			children = (
+				E69AC4AC256C160300401B95 /* Helper */,
+				E69AC4A7256C15CC00401B95 /* Extension */,
 				E671ADCE256A860C00088513 /* Manager */,
 				E6D97B90256978C1008C5A91 /* Controller */,
 				E6D97B8F256978BD008C5A91 /* View */,
@@ -114,6 +148,7 @@
 		E6D97B8E256978B5008C5A91 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E69AC4B0256C17DF00401B95 /* YOLOv3Tiny.mlmodel */,
 				E6D97B91256978D3008C5A91 /* Inceptionv3.mlmodel */,
 			);
 			path = Model;
@@ -122,6 +157,7 @@
 		E6D97B8F256978BD008C5A91 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E69AC4A2256C159400401B95 /* Custom */,
 				E6D97B7F256978AF008C5A91 /* Main.storyboard */,
 			);
 			path = View;
@@ -257,9 +293,13 @@
 				E6D97B98256979E5008C5A91 /* ImageRecognitionVC.swift in Sources */,
 				E6D97B7A256978AF008C5A91 /* AppDelegate.swift in Sources */,
 				E69AC49D256C0F6700401B95 /* ObjectDetectionVC.swift in Sources */,
+				E69AC4AE256C162200401B95 /* VideoCapture.swift in Sources */,
+				E69AC4A9256C15E400401B95 /* VNRecognizedObjectObservationExtension.swift in Sources */,
 				E6D97B7C256978AF008C5A91 /* SceneDelegate.swift in Sources */,
 				E6D97B9C25697BEB008C5A91 /* MoreVC.swift in Sources */,
 				E69AC49A256C0EBD00401B95 /* StartVC.swift in Sources */,
+				E69AC4B1256C17DF00401B95 /* YOLOv3Tiny.mlmodel in Sources */,
+				E69AC4A4256C15AE00401B95 /* BoundingBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,14 +448,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X543226ZZU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "CoreML-ImageDetector/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.compusight.MLModelCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mm.ObjectDetectionImageRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,14 +469,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X543226ZZU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "CoreML-ImageDetector/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.compusight.MLModelCamera;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mm.ObjectDetectionImageRecognition;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
